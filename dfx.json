@@ -1,0 +1,39 @@
+{
+  "canisters": {
+    "baymax_app_backend": {
+      "build": "npx azle baymax_app_backend",
+      "candid": "src/baymax_app_backend/baymax_app_backend.did",
+      "gzip": true,
+      "main": "src/baymax_app_backend/src/index.ts",
+      "tech_stack": {
+        "cdk": {
+          "azle": {}
+        },
+        "language": {
+          "javascript": {},
+          "typescript": {}
+        }
+      },
+      "type": "custom",
+      "wasm": ".azle/baymax_app_backend/baymax_app_backend.wasm"
+    },
+    "baymax_app_frontend": {
+      "dependencies": [
+        "baymax_app_backend"
+      ],
+      "source": [
+        "src/baymax_app_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "baymax_app_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
